@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.welcome-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.welcome-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: white;
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.login-menu {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.login-menu:hover {
+  color: #007bff;
+}
+
+.recommended-movies {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.movies-list {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px;
+  justify-content: center;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie img {
+  width: 160px;
+  height: 240px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.movie img:hover {
+  transform: scale(1.1);
+}
+
+.movie p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

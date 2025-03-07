@@ -1,0 +1,85 @@
+/* Full-screen container */
+.payment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the screen */
+  background: url("https://images.pexels.com/photos/7820326/pexels-photo-7820326.jpeg") no-repeat center center;
+  background-size: cover;
+  backdrop-filter: blur(5px); /* Adds a blur effect for better readability */
+}
+
+/* Payment Box */
+.payment-box {
+  background-color: rgba(0, 0, 0, 0.8); /* Slightly darker for contrast */
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 400px; /* Increased width */
+  color: white;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1); /* Soft glow effect */
+}
+
+/* Input fields */
+.payment-box input,
+.payment-box select {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background: white; /* Transparent input background */
+  color: rgb(20, 1, 1);
+}
+
+.payment-box input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Payment Button */
+.payment-box button {
+  width: 100%;
+  padding: 12px;
+  background: #28a745; /* Green button */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.payment-box button:hover {
+  background: #218838; /* Darker green */
+}
+
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 20px; /* Moved to the top */
+  left: 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #ffc107; /* Yellow highlight on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 450px) {
+  .payment-box {
+    width: 90%;
+    padding: 20px;
+  }
+}

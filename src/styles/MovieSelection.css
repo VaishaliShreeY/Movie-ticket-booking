@@ -1,0 +1,74 @@
+/* MovieSelection Page Styles */
+.movie-selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh; /* Full screen height */
+  background-image: url("https://images.pexels.com/photos/2539151/pexels-photo-2539151.jpeg"); /* Image from public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white; /* White text for better visibility */
+  padding: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffffff; /* White text */
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay behind text */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center; /* Center grid items horizontally */
+  align-items: center; /* Center grid items vertically */
+  width: 100%;
+  max-width: 900px;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent dark card */
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.movie-image {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movie-title {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ffffff; /* White text */
+}
+
+.select-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.select-button:hover {
+  background-color: #0056b3;
+}
+
