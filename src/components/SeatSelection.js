@@ -13,7 +13,7 @@ const SeatSelection = () => {
   const [bookedSeats, setBookedSeats] = useState([]);
   const [selectedSeats, setSelectedSeats] = useState([]);
 
-  // Load booked seats from localStorage
+  
   useEffect(() => {
     if (selectedTheater) {
       const savedSeats = JSON.parse(localStorage.getItem(`bookedSeats_${selectedTheater.id}`)) || [];
@@ -25,7 +25,6 @@ const SeatSelection = () => {
     return <div>Please select a movie and theater first!</div>;
   }
 
-  // Toggle seat selection
   const toggleSeatSelection = (seatNumber) => {
     if (bookedSeats.includes(seatNumber)) return;
 
@@ -36,7 +35,7 @@ const SeatSelection = () => {
     );
   };
 
-  // Proceed to payment
+  
   const handleBooking = () => {
     if (selectedSeats.length === 0) {
       alert("Please select at least one seat to proceed.");
@@ -46,7 +45,7 @@ const SeatSelection = () => {
     const updatedBookedSeats = [...bookedSeats, ...selectedSeats];
     localStorage.setItem(`bookedSeats_${selectedTheater.id}`, JSON.stringify(updatedBookedSeats));
 
-    // Persist data for later retrieval (fixes issue after login)
+    
     localStorage.setItem("selectedMovie", JSON.stringify(selectedMovie));
     localStorage.setItem("selectedTheater", JSON.stringify(selectedTheater));
     localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));

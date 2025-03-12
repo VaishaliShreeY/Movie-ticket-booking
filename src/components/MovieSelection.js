@@ -17,7 +17,7 @@ const MovieSelection = ({ onSelectMovie }) => {
   ];
 
   const handleMovieSelect = (movie) => {
-    sessionStorage.setItem("selectedMovie", JSON.stringify(movie)); // ✅ Save movie details
+    sessionStorage.setItem("selectedMovie", JSON.stringify(movie)); 
     onSelectMovie(movie);
     navigate("/theater-selection", { state: { selectedMovie: movie } });
   };

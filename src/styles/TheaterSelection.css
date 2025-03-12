@@ -1,4 +1,4 @@
-/* Main Container */
+
 .theater-selection-container {
   text-align: center;
   background: url("https://images.pexels.com/photos/30617227/pexels-photo-30617227.jpeg") no-repeat center center fixed;
@@ -14,7 +14,7 @@
   padding: 50px;
 }
 
-/* Theater Cards in a Horizontal Row */
+
 .theater-grid {
   display: flex;
   flex-direction: row;
@@ -28,7 +28,7 @@
   scroll-behavior: smooth;
 }
 
-/* Individual Theater Card */
+
 .theater-card {
   background: rgba(0, 0, 0, 0.7);
   padding: 20px;
@@ -39,7 +39,7 @@
   flex-shrink: 0;
 }
 
-/* Theater Image */
+
 .theater-image {
   width: 100%;
   height: 200px;
@@ -47,7 +47,7 @@
   object-fit: cover;
 }
 
-/* Typography */
+
 .theater-card h2 {
   margin: 10px 0;
   font-size: 20px;
@@ -58,7 +58,7 @@
   font-size: 16px;
 }
 
-/* Button Styling */
+
 .theater-card button {
   background-color: blue;
   color: white;
@@ -87,7 +87,7 @@
   outline: none;
 }
 .back-button:hover {
-  color: #007bff; /* Adds underline on hover */
+  color: #007bff; 
 }
 
 

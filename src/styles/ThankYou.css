@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("https://images.pexels.com/photos/5912586/pexels-photo-5912586.jpeg"); /* Replace with a proper image */
+    background-image: url("https://images.pexels.com/photos/5912586/pexels-photo-5912586.jpeg"); 
     background-size: cover;
     background-position: center;
   }

@@ -68,7 +68,7 @@ const TheaterSelection = ({ selectedMovie, onSelectTheater }) => {
         ))}
       </div><div>
 
-      {/* Back Button at Bottom Left */}
+      {}
       <div className="back-button" onClick={() => navigate(-1)}>⬅ Back</div></div>
     </div>
   );

@@ -15,7 +15,7 @@ const Login = ({ setIsAuthenticated }) => {
       setIsAuthenticated(true);
       sessionStorage.setItem("isAuthenticated", "true");
 
-      // Retrieve movie and seat selection after login
+      
       const savedMovie = sessionStorage.getItem("selectedMovie");
       const savedBookingData = sessionStorage.getItem("bookingData");
 

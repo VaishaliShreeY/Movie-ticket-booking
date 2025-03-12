@@ -9,12 +9,12 @@ import Payment from "./components/Payment";
 import ThankYou from "./components/ThankYou";
 
 function App() {
-  // Authentication state (from sessionStorage)
+  
   const [isAuthenticated, setIsAuthenticated] = useState(
     sessionStorage.getItem("isAuthenticated") === "true"
   );
 
-  // Selected movie, theater & seats states
+  
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedTheater, setSelectedTheater] = useState(null);
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Public Routes */}
+        {}
         <Route 
           path="/" 
           element={<Welcome isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} 
@@ -44,7 +44,7 @@ function App() {
           element={<SeatSelection selectedMovie={selectedMovie} selectedTheater={selectedTheater} onSelectSeats={setSelectedSeats} />} 
         />
         
-        {/* Protected Payment Route (Only Accessible if Authenticated) */}
+        {}
         <Route 
           path="/payment" 
           element={isAuthenticated ? (
@@ -54,7 +54,7 @@ function App() {
           )}
         />
 
-        {/* Final Thank You Page */}
+        {}
         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
     </Router>
