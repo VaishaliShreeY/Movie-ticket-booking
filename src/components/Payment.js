@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import Swal from "sweetalert2";
 import "../styles/Payment.css";
 
 const Payment = () => {
@@ -8,7 +9,6 @@ const Payment = () => {
 
   const [userName, setUserName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [seats, setSeats] = useState(1);
   const [paymentMethod, setPaymentMethod] = useState("Credit Card");
   const [selectedShowTime, setSelectedShowTime] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
@@ -16,6 +16,8 @@ const Payment = () => {
   const selectedMovie = location.state?.selectedMovie || JSON.parse(localStorage.getItem("selectedMovie"));
   const selectedTheater = location.state?.selectedTheater || JSON.parse(localStorage.getItem("selectedTheater"));
   const selectedSeats = location.state?.selectedSeats || JSON.parse(localStorage.getItem("selectedSeats")) || [];
+  const initialSeatCount = location.state?.seatCount || selectedSeats.length || 1;
+  const [seats, setSeats] = useState(initialSeatCount);
 
   const ticketPrice = selectedTheater?.price || 150;
   const totalAmount = seats * ticketPrice;
@@ -45,9 +47,24 @@ const Payment = () => {
       alert("Please enter your name and phone number to proceed.");
       return;
     }
-    alert(`Payment Successful! 🎉\n\nName: ${userName}\nPhone: ${phoneNumber}\nMovie: ${selectedMovie.title}\nTheater: ${selectedTheater.name}\nSeats: ${selectedSeats.join(", ")}\nTotal Amount: ₹${totalAmount}`);
-    localStorage.removeItem("selectedSeats");
-    navigate("/thank-you");
+
+    Swal.fire({
+      icon: "success",
+      title: "Payment Successful! 🎉",
+      html: `
+        <strong>Name:</strong> ${userName}<br/>
+        <strong>Phone:</strong> ${phoneNumber}<br/>
+        <strong>Movie:</strong> ${selectedMovie.title}<br/>
+        <strong>Theater:</strong> ${selectedTheater.name}<br/>
+        <strong>Seat Numbers:</strong> ${selectedSeats.join(", ")}<br/>
+        <strong>Seats Count:</strong> ${seats}<br/>
+        <strong>Total Amount:</strong> ₹${totalAmount}
+      `,
+      confirmButtonText: "OK"
+    }).then(() => {
+      localStorage.removeItem("selectedSeats");
+      navigate("/thank-you");
+    });
   };
 
   return (
@@ -82,7 +99,7 @@ const Payment = () => {
             </tr>
             <tr><td><strong>Ticket Price:</strong></td><td>₹{ticketPrice} per seat</td></tr>
             <tr>
-              <td><strong>Number of Seats:</strong></td>
+              <td><strong>Seats Count:</strong></td>
               <td>
                 <input
                   type="number"
@@ -126,11 +143,14 @@ const Payment = () => {
                 />
               </td>
             </tr>
+            <tr>
+              <td><strong>Seat Numbers:</strong></td>
+              <td>{selectedSeats.join(", ")}</td>
+            </tr>
           </tbody>
         </table>
         <button onClick={handleConfirmPayment} className="pay-button">Confirm Payment</button>
       </div>
-      <button className="back-button" onClick={() => navigate(-2)}>⬅ Back</button>
     </div>
   );
 };

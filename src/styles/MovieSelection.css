@@ -1,36 +1,39 @@
-
 .movie-selection-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  min-height: 100vh; 
-  background-image: url("https://images.pexels.com/photos/2539151/pexels-photo-2539151.jpeg"); 
+  min-height: 100vh;
+  background-image: url("https://images.pexels.com/photos/2539151/pexels-photo-2539151.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white; 
-  padding: 20px;
+  color: white;
+  padding: 10px 20px 20px 20px;
 }
 
 .title {
   font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #ffffff; 
-  background: rgba(0, 0, 0, 0.6); 
+  margin-bottom: 20px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
   padding: 10px;
   border-radius: 10px;
+  align-self: center;
 }
 
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 20px;
-  justify-content: center; 
-  align-items: center; 
+  justify-items: center;
+  align-items: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
+  padding: 0;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .movie-card {
@@ -41,7 +44,7 @@
   border: 1px solid #ffffff;
   border-radius: 10px;
   padding: 15px;
-  background-color: rgba(34, 34, 34, 0.8); 
+  background-color: rgba(34, 34, 34, 0.8);
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 
@@ -55,7 +58,7 @@
 .movie-title {
   font-size: 1.2rem;
   margin: 10px 0;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 .select-button {
@@ -71,4 +74,3 @@
 .select-button:hover {
   background-color: #0056b3;
 }
-

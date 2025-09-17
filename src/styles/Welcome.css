@@ -11,12 +11,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px 20px;
   text-align: center;
   background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
   border-radius: 10px;
+  margin: -10px auto 10px;  
+  
 }
 
 .welcome-title {
@@ -47,21 +49,6 @@ button:hover {
   transform: scale(1.1);
 }
 
-.login-menu {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.login-menu:hover {
-  color: #007bff;
-}
-
 .recommended-movies {
   margin-top: 30px;
   text-align: center;
@@ -69,31 +56,57 @@ button:hover {
 
 .movies-list {
   display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
+  padding: 10px;
 }
 
-.movie {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.movie img {
-  width: 160px;
-  height: 240px;
-  border-radius: 10px;
+.movie-card {
+  position: relative;
+  width: 180px;
+  text-align: center;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-.movie img:hover {
-  transform: scale(1.1);
+.movie-card:hover {
+  transform: scale(1.05);
 }
 
-.movie p {
+.movie-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.movie-info {
+  position: relative;
   margin-top: 10px;
-  font-size: 1.2rem;
+}
+
+.movie-title {
   font-weight: bold;
+  font-size: 16px;
+}
+
+.movie-description {
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+.movie-card:hover .movie-description {
+  opacity: 1;
+  visibility: visible;
 }
